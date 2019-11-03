@@ -1,7 +1,8 @@
-# OpenCVのバージョン確認
-import cv2
-print(cv2.__version__)
-print(dir(cv2.aruco))
-# Pythonのバージョン確認
-import sys
-print(sys.version)
+import cv2, matplotlib
+import numpy as np
+import matplotlib.pyplot as plt
+# read an image
+img = cv2.imread('test.jpg')
+
+# show image format (basically a 3-d array of pixel color info, in BGR format)
+print(img)
