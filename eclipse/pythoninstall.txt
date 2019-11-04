@@ -1,0 +1,4 @@
+eclipseでの使用インストール参考
+参考url:https://vi-se.com/engineer/web-python3-eclipse-settings
+
+http://pydev.org/updatesを使用している
