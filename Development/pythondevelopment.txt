@@ -1,0 +1,14 @@
+python install :https://www.python.org/downloads/release/python-368/
+python 参考url :https://www.kkaneko.jp/tools/win/python36.html
+
+argparse:標準libにある
+
+vscode :https://qiita.com/psychoroid/items/7d85ae6bade4a67aedb1
+
+ffmpy :cmdにてpip3 install ffmpyを実行する
+
+opencv :https://www.sejuku.net/blog/54272
+
+numpy :https://www.sejuku.net/blog/54272
+errorが消える :https://qiita.com/FXsimone/items/577e3924f40aa4a9d4ea
+※上記はjsonファイルにあるコマンドを挿入する
