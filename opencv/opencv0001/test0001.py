@@ -1,5 +1,12 @@
 import cv2
+import os
 
 filename = "test.jpg"
-gry = cv2.imread(filename, 0)
-cv2.imwrite('gray.jpg', gry)
+gryr = cv2.imread(filename, 0)
+
+print(os.path.exists("test.jpg"))
+
+#C://Users//masho//Desktop//gray.jpg
+gryw = cv2.imwrite('C://aaa//gray.jpg', gryr)
+
+print(os.path.exists("C://aaa//gray.jpg"))

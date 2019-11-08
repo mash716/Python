@@ -1,10 +1,11 @@
 import cv2
 import numpy as np
+import os
 
 filename = "test.jpg"
 img = cv2.imread(filename,1)
 hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
-
+print(os.path.exists("test.jpg"))
 # 取得する色の範囲を指定する
 lower_color = np.array([20, 50, 50])
 upper_color = np.array([255, 255, 255])
@@ -16,3 +17,4 @@ img_mask = cv2.inRange(hsv, lower_color, upper_color)
 img_color = cv2.bitwise_and(img, img, mask=img_mask)
 
 cv2.imwrite("hsv.jpg", img_color)
+print(os.path.exists("hsv.jpg"))
