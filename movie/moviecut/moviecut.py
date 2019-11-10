@@ -1,6 +1,7 @@
 #C:/movie/movie/image.mp4 C:/movie/png
 import cv2
 import os
+#パス有無判定
 print(os.path.exists("C://movie//movie//image.mp4"))
 
 def save_all_frames(video_path, dir_path, basename, ext='jpg'):
@@ -24,5 +25,5 @@ def save_all_frames(video_path, dir_path, basename, ext='jpg'):
         else:
             return
 
-save_all_frames('C://movie//movie//image.mp4', 'C://movie//jpg', 'image')
-save_all_frames('C://movie//movie//image.mp4', 'C://movie//png', 'sample_video_img', 'png')
+save_all_frames('C:/movie/movie/cup.mp4', 'C:/movie/jpg', 'image')
+save_all_frames('C:/movie/movie/cup.mp4', 'C:/movie/png', 'sample_video_img', 'png')

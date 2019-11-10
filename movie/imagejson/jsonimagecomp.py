@@ -3,37 +3,41 @@
 # #エンコードした画像の保存先パス
 # encode_file=r"C:/movie/json/encode.txt"
 
-# json モジュールのインポート
-import json
-# import numpy as np
+import cv2
 import base64
-# import cv2
+import numpy as np
+import io
 
-# 画像読み込み
-img_file_path = 'C:/movie/jsonpng/'
-img_file_name = 'decode.png'
-img = open(img_file_path+img_file_name, 'rb')
-img_byte = img.read()
-img_content = base64.b64encode(img_byte).decode("utf-8")
+#Base64でエンコードされたファイルのパス C:\Users\masho\Desktop\work\python\Python\movie\encodingjson\check\aaaa.json C:\movie\json
+target_file=r"C:/movie/json/encode0001.json"
+#デコードされた画像の保存先パス
+image_file=r"C:/movie/jsonpng/decode.png"
 
-# リクエストBody作成
-# リクエストBody作成
-item = {
-    'requests': [{
-        'image': {
-            'content': img_content
-        },
-        'features': [{
-            'type': 'LABEL_DETECTION',
-            'maxResults': 10,
-        }]
-    }]
-}
+with open(target_file,'rb') as f:
+    img_base64 = f.read()
 
-if item is None:
+#バイナリデータ <- base64でエンコードされたデータ  
+img_binary = base64.b64decode(img_base64)
+jpg=np.frombuffer(img_binary,dtype=np.uint8)
+
+#raw image <- jpg
+img = cv2.imdecode(jpg, cv2.IMREAD_COLOR)
+
+if img is None:
     print("not exit")
 else:
     print("exit")
 
-with open('C:/Users/masho/Desktop/work/python/Python/movie/encodingjson/check/aaaa.json', 'w') as f:
-    json.dump(item, f, ensure_ascii=False, indent=4)
+#画像を保存する場合
+imgwr = cv2.imwrite(image_file,img)
+
+if imgwr is None:
+    print("not exit")
+else:
+    print("exit")
+
+
+# #表示確認
+# cv2.imshow('window title', img)
+# cv2.waitKey(0)
+# cv2.destroyAllWindows()

@@ -1,6 +1,6 @@
 # json モジュールのインポート
 import json
- 
+
 # JSON の書き出し用のサンプルオブジェクト
 data = {
     'title': 'JSONの読み書き',
@@ -16,7 +16,7 @@ data = {
         }
     ]
 }
- 
+
 # Pythonオブジェクトをファイル書き込み
 savepath = 'sample.json'
 with open(savepath, 'w') as outfile:

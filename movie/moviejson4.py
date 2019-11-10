@@ -8,8 +8,8 @@ import base64
 import numpy as np
 import io
 
-#Base64でエンコードされたファイルのパス
-target_file=r"C:/movie/json/encode.txt"
+#Base64でエンコードされたファイルのパス C:\Users\masho\Desktop\work\python\Python\movie\encodingjson\check\aaaa.json
+target_file=r"C:/Users/masho/Desktop/work/python/Python/movie/encodingjson/check/aaaa.json"
 #デコードされた画像の保存先パス
 image_file=r"C:/movie/jsonpng/decode.png"
 
