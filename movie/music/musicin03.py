@@ -18,6 +18,7 @@ audio_stream = stream.audio
 stream = stream.filter('fade', type='in', start_time=0, duration=5)
 audio_stream = audio_stream.filter('afade', type='in', start_time=0, duration=5)
 
+
 stream = ffmpeg.output(stream, audio_stream, 'C:/movie/movie/out01.mp4')
 
 ffmpeg.run(stream)
