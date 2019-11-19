@@ -1,13 +1,13 @@
 import ffmpeg
 
-#トリミングだが…
-upper_left_x = 500
+#切り取りたい座標軸を選ぶ
+upper_left_x = 200
 # 切り取りたい区画のx座標（px）
-upper_left_y = 500
+upper_left_y = 400
 # 切り取りたい区画のy座標（px）
 width = 500
 # 切り取りたい区画の幅（px）
-height = 500
+height = 600
 # 切り取りたい区画の高さ（px）
 
 stream = ffmpeg.input('C:/Users/masho/Desktop/work/python/Python/lib/movie/videooriginal.mp4')

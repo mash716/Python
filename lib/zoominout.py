@@ -1,46 +1,38 @@
-import ffmpeg
+import cv2
 
-file_path = "C:/Users/masho/Desktop/work/python/Python/lib/movie/Café_22728.mp4"#編集したい動画のパス
-save_path = "C:/Users/masho/Desktop/work/python/Python/lib/movie/sample.mp4"#トリミングしたい動画のパス
+#from_dir  = "C:/Users/masho/Desktop/work/python/Python/lib/movie/20191114231101207027"#編集したい動画のパス
+to_dir  = "C:/Users/masho/Desktop/work/python/Python/lib/movie/aaaa/"#トリミングしたい動画のパス
+moviePath = "C:/Users/masho/Desktop/work/python/Python/lib/movie/videooriginalout.mp4"
 
-#動画全体の時間を調べる
-video_info = ffmpeg.probe(file_path)
-duration = float(video_info['streams'][0]['duration'])
+# 動画から全てのフレームを切り出して保存する
+movie = cv2.VideoCapture(moviePath)
+# 動画のFPS、総フレーム数、幅、高さを取得する
+fps = int(movie.get(cv2.CAP_PROP_FPS))
+frameCnt = int(movie.get(cv2.CAP_PROP_FRAME_COUNT))
+width = int(movie.get(cv2.CAP_PROP_FRAME_WIDTH))
+height = int(movie.get(cv2.CAP_PROP_FRAME_HEIGHT))
 
-print("=======================")
+for i in range(30):
+    width += 1
+    print(width)
 
-print(duration)
-#後半の半分だけ取り出し
-divide_sec = duration
-print("=======================")
+for i in range(30):
+    height += 1
+    print(height)
+print("fps:" + str(fps))
+print("フレーム数:" + str(frameCnt))
+print("幅:" + str(width))
+print("高さ:" + str(height))
 
-print(divide_sec)
 
-stream = ffmpeg.input(file_path, ss=divide_sec, t=divide_sec)
-
-print("=======================")
-
-print(stream)
-
-#音声取り出し
-audio_stream = stream.audio
-
-#開始から5秒かけてフェードイン
-stream = stream.filter('fade', type='in', start_time=0, duration=5)
-print("=======================")
-
-print(stream)
-
-audio_stream = audio_stream.filter('afade', type='in', start_time=0, duration=5)
-print("=======================")
-
-print(audio_stream)
-
-stream = ffmpeg.output(stream, audio_stream, save_path)
-print("=======================")
-
-print(stream)
-
-print("=======================")
-
-ffmpeg.run(stream)
+# フレームの桁数を取得し、画像ファイルに保存する
+digit = len(str(frameCnt))
+num = 0
+while True:
+    ret, frame = movie.read()
+    if ret:
+        cv2.imwrite("{}_{}.{}".format(to_dir + "/frame_img", str(num).zfill(digit), "png"), frame)
+        num += 1
+    else:
+        num -= 1
+        break
