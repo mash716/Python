@@ -24,8 +24,24 @@ def jsondata():
     cmd = "aaaa.py" + " -h"
     subprocess.run(cmd,shell =True)
 
+def test():
+    print("yeah")
+
+def test1():
+    print("yeah1")
+
+def test2():
+    print("yeah2")
+
+def test3():
+    print("yeah3")
+
 def main():
     jsondata()
+    test()
+    test1()
+    test2()
+    test3()
 
 if __name__ == "__main__":
     main()
