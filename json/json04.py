@@ -46,7 +46,6 @@ def jsondata():
     print(cmd)
     subprocess.run(cmd,shell =True)
 
-
     print(A1)
     print(B1)
     print(C1)
