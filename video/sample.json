@@ -1,0 +1,161 @@
+{
+  "base_path": "/home/kshimizu/work/1130/ppe/trireal_movie_composer/sample",
+  "output_file": "output_sample.mp4",
+  "audio_track": "30 Unit1 Extra La La Land Emma Stone.m4a",
+  "tag": [
+    "かわいい動画"
+  ],
+  "scenes": [
+    {
+      "src": "0006.mp4",
+      "tag": [
+        "タグ1",
+        "タグ2",
+        "タグ3"
+      ],
+      "trimming": {
+        "starttime": 3000,
+        "endtime": 25000,
+        "tl": {
+          "x": 20,
+          "y": 20
+        },
+        "br": {
+          "x": 320,
+          "y": 480
+        }
+      },
+      "imagefilters": [
+        {
+          "events": [
+            {
+              "filter": "tag",
+              "starttime": 500,
+              "endtime": 3000,
+              "tag": [
+                "時間依存のタグ"
+              ]
+            },
+            {
+              "filter": "fade",
+              "starttime": 5000,
+              "endtime": 20000
+            },
+            {
+              "filter": "caption",
+              "text": "キャプションのテスト",
+              "starttime": 3000,
+              "endtime": 4000
+            },
+            {
+              "filter": "caption",
+              "text": "字幕です",
+              "starttime": 5000,
+              "endtime": 7000
+            }
+          ]
+        },
+        {
+          "events": [
+            {
+              "filter": "caption",
+              "text": "字幕ですよ",
+              "starttime": 7000,
+              "endtime": 8000
+            },
+            {
+              "filter": "zoom",
+              "tl": {
+                "x": 280,
+                "y": 100
+              },
+              "br": {
+                "x": 600,
+                "y": 200
+              },
+              "starttime": 8000,
+              "endtime": 15000
+            },
+            {
+              "filter": "speed",
+              "starttime": 10000,
+              "endtime": 20000,
+              "rate": 0.5
+            }
+          ]
+        }
+      ],
+      "audiofilters": [
+        {
+          "events": [
+            {
+              "filter": "volume",
+              "starttime": 8000,
+              "endtime": 30000,
+              "volume": 0.6
+            },
+            {
+              "filter": "soundeffect",
+              "starttime": 3000,
+              "endtime": 180000,
+              "src": "pistol.mp3",
+              "volume": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "src": "ぷよぷよeスポーツ_20191117101739.mp4",
+      "trimming": {
+        "starttime": 10000,
+        "endtime": 40000
+      },
+      "imagefilters": [
+        {
+          "events": [
+            {
+              "filter": "overlay",
+              "starttime": 5000,
+              "endtime": 15000,
+              "src": "ninja.png",
+              "position": {
+                "tl": {
+                  "x": 500,
+                  "y": 500
+                },
+                "br": {
+                  "x": 750,
+                  "y": 750
+                }
+              }
+            },
+            {
+              "filter": "overlay",
+              "starttime": 10000,
+              "endtime": 25000,
+              "src": "ninja.png",
+              "position": {
+                "tl": {
+                  "x": 500,
+                  "y": 100
+                },
+                "br": {
+                  "x": 750,
+                  "y": 350
+                }
+              }
+            },
+            {
+              "filter":"frame",
+              "starttime": 10000,
+              "endtime": 25000,
+              "src":"frame.png",
+              "★コメント":"★"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
