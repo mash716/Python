@@ -6,7 +6,7 @@ video = cv2.VideoWriter('C:/movie/movieresult/video.mp4', fourcc, 30.0, (356, 36
 
 for i in range(1, 638):
     img = cv2.imread('C:/movie/png/sample_video_img_{0:03d}.png'.format(i))
-    img = cv2.resize(img, (356, 369))
+    img = cv2.resize(img, (356, 380))
     video.write(img)
 
 video.release()
